@@ -44,7 +44,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>Login</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">

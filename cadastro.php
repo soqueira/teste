@@ -18,7 +18,9 @@ if (isset($_POST['cadastrar'])) {
 	$email = $_POST['email'];
 	$senha = $_POST['senha'];
 	$foto = $_FILES["foto"];
-
+	if(empty($_POST['nome']) || empty($_POST['email']) || empty($_POST['senha'])):
+		echo "<p class='alerta_campos'>Preencha os campos e clique em proximo</p>";
+	else:
 	// Se a foto estiver sido selecionada
 	if (!empty($foto["name"])) {
 
@@ -54,6 +56,18 @@ if (isset($_POST['cadastrar'])) {
    		 	$error[4] = "A imagem deve ter no máximo ".$tamanho." bytes";
 		}
 
+		// não deixa email repetir
+
+		$q = "SELECT * FROM usuarios WHERE email='$email'";
+
+		//executa a query
+		$r = mysqli_query($connect, $q);
+
+		// exibe erro se o email já estiver cadastrado
+		if(mysqli_num_rows($r) >= 1):
+			echo "<p class='alerta_campos'>esse email já esta em uso</p>";
+		else:
+
 		// Se não houver nenhum erro
 		if (count($error) == 0) {
 
@@ -77,15 +91,19 @@ if (isset($_POST['cadastrar'])) {
 				header('location: index.php');
 			}
 		}
-
+	endif;
 		// Se houver mensagens de erro, exibe-as
 		if (count($error) != 0) {
 			foreach ($error as $erro) {
-				echo $erro . "<br />";
+				echo '<p class="alerta_campos">'.$erro.'</p>';
 			}
 		}
+	}else{
+		echo "<p class='alerta_campos'>Coloque uma foto de perfil</p>";
 	}
+endif;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -100,7 +118,8 @@ if (isset($_POST['cadastrar'])) {
 
 <body>
 	<div class="container">
-
+		<i class="fas fa-user-circle"></i>
+		<p>Cadastro</p>
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data" name="cadastro">
         <input type="text" name="nome" placeholder="Insira seu nome">
 
