@@ -21,13 +21,14 @@
 <head>
     <meta charset="utf-8">
     <title>pagina restrita</title>
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
     <?php
     //pega os dados do sql
       echo "Olá ". $dados['nome'];
-      echo "<img src='fotos/".$dados['foto']."'>";
+      echo "<img class='img_ps' src='fotos/".$dados['foto']."'>";
     ?>
     <a href="logout.php">Sair</a>
 </body>

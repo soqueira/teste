@@ -10,13 +10,13 @@
     $senha = mysqli_escape_string($connect, $_POST['senha']);
 
     if(empty($email) or empty($senha)):
-      $erros[] = "<li> o campo login e senha precisa ser preenchido</li>";
+      $erros[] = "<p class='alerta_campos'> o campo login e senha precisa ser preenchido</p>";
     else:
       $sql = "SELECT email FROM usuarios WHERE email = '$email'";
       $resultado = mysqli_query($connect, $sql);
 
         if(mysqli_num_rows($resultado) > 0):
-          // $senha = base64_encode($senha);
+          $senha = base64_encode($senha);
           $sql = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
           $resultado = mysqli_query($connect, $sql);
             if(mysqli_num_rows($resultado) == 1):
@@ -26,10 +26,10 @@
               $_SESSION['id_usuario'] = $dados['id'];
               header('Location: home.php');
             else:
-              $erros[] = "<p>Dados incorretos</p>";
+              $erros[] = "<p class='alerta_campos'>Dados incorretos</p>";
             endif;
         else:
-          $erros[] = "<p>O usuario não existe</p>";
+          $erros[] = "<p class='alerta_campos'>O usuario não existe</p>";
         endif;
 
     endif;
@@ -79,7 +79,7 @@
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
             <input type="text" name="email" value="" placeholder="Insira seu Email">
             <input type="password" name="senha" value="" id="senha" placeholder="Insira sua Senha">
-            <button type="submit" class="btn-login" name="btn-login">entrar</button>
+            <button type="submit" class="btn-login" name="btn-login">Fazer login</button>
             <a id="mostrar-senha" href="#" onclick="mostrarSenha()"><i class="fas fa-eye"></i></a>
             <a class="cadastro" href="cadastro.php">Fazer cadastro</a>
         </form>
@@ -156,6 +156,10 @@
         } else if (event.keyCode === 89) {
             $('.slide').fadeOut('300');
         } else if (event.keyCode === 90) {
+            $('.slide').fadeOut('300');
+        } else if (event.keyCode === 32) {
+            $('.slide').fadeOut('300');
+        } else if(event.keycode === 9){
             $('.slide').fadeOut('300');
         }
     });

@@ -17,6 +17,7 @@ if (isset($_POST['cadastrar'])) {
 	$nome = $_POST['nome'];
 	$email = $_POST['email'];
 	$senha = $_POST['senha'];
+	$senha_cript = base64_encode($senha);
 	$foto = $_FILES["foto"];
 	if(empty($_POST['nome']) || empty($_POST['email']) || empty($_POST['senha'])):
 		echo "<p class='alerta_campos'>Preencha os campos e clique em proximo</p>";
@@ -84,11 +85,11 @@ if (isset($_POST['cadastrar'])) {
 			move_uploaded_file($foto["tmp_name"], $caminho_imagem);
 
 			// Insere os dados no banco
-			$sql = mysqli_query($connect,"INSERT INTO usuarios VALUES ('', '".$nome."', '".$email."', '".$nome_imagem."', '".$senha."')");
+			$sql = mysqli_query($connect,"INSERT INTO usuarios VALUES ('', '".$nome."', '".$email."', '".$nome_imagem."', '".$senha_cript."')");
 
 			// Se os dados forem inseridos com sucesso
 			if ($sql){
-				header('location: index.php');
+				header('location: login.php');
 			}
 		}
 	endif;
@@ -129,9 +130,9 @@ endif;
 				<!-- <input type="password" name="senha" id="senha" value="" placeholder="Insira sua senha"> -->
 				<a id="mostrar-senha" href="#" onclick="mostrarSenha()"><i class="fas fa-eye"></i></a>
 
-				<button type="button" class="btn-cadastro btn-login" name="button">proximo</button>
+				<button type="button" class="btn-cadastro" name="button"><i class="fas fa-arrow-right"></i></button>
 				<div class="proxima-etapa">
-					 <button type="submit" class="btn-login btn-cadastro2 " name="cadastrar">cadastrar</button>
+					 <button type="submit" class="btn-login btn-cadastro2 " name="cadastrar">Fazer cadastro</button>
 
 					 <div class="file-upload">
 	            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>

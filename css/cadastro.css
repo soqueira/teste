@@ -3,9 +3,30 @@
 }
 .btn-cadastro{
   top: 240% !important;
+  background: #537895;
+  border: none;
+  color: #fff;
+  padding: 10px 15px 10px 15px;
+  border-radius: 2px;
+  font-size: 17px;
+  font-weight: 100;
+  outline: none;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  width: 50px;
+}
+.btn-cadastro:hover{
+  transition: .2s;
+  background: #09203f;
+  width: 100px;
+}
+.fa-eye{
+  
 }
 #mostrar-senha {
-  top: 280px !important;
+  top: 275px !important;
 }
 .container{
   overflow: hidden;
@@ -143,4 +164,5 @@
   background: #ff0000;
   padding: 5px 10px 5px 10px;
   text-align: center;
+  z-index: 1000;
 }
