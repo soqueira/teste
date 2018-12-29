@@ -1,7 +1,4 @@
-
 <?php
-//login secundario
-//depois do cadastro será redirecionado para essa pagina
   //conexao
   require_once 'db_connect.php';
   //sessao
@@ -54,6 +51,7 @@
 </head>
 
 <body>
+
     <?php
       if(!empty($erros)):
         foreach($erros as $erro):
@@ -66,12 +64,21 @@
         <p>Login</p>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
             <input type="text" name="email" value="" placeholder="Insira seu Email">
-            <input type="password" name="senha" value="" id="senha" placeholder="Insira sua Senha">
-            <button type="submit" class="btn-login" name="btn-login">entrar</button>
-            <a id="mostrar-senha" href="#" onclick="mostrarSenha()"><i class="fas fa-eye"></i></a>
+            <input type="password" class="myPass" name="senha" value="" id="senha" placeholder="Insira sua Senha">
+            <!-- mostrar password -->
+            <span id="showPass">
+                  <i class="far fa-eye-slash" aria-hidden="true"></i>
+              <i class="far fa-eye" aria-hidden="true" style="display:none;"></i>
+              </span>
+            <button type="submit" class="btn-login" name="btn-login">Fazer login</button>
             <a class="cadastro" href="cadastro.php">Fazer cadastro</a>
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="js/keyUp.js"></script>
+    <script src="js/mostrarSenha.js"></script>
+    <script src="js/hora.js"></script>
+    <script src="js/wow.js"></script>
 </body>
 
 </html>

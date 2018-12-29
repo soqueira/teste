@@ -112,100 +112,54 @@ endif;
 <head>
     <meta charset="utf-8">
     <title>cadastro</title>
-    <link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/cadastro.css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 
 <body>
-	<div class="container">
-		<i class="fas fa-user-circle"></i>
-		<p>Cadastro</p>
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data" name="cadastro">
-        <input type="text" name="nome" placeholder="Insira seu nome">
-
-				<input type="email" name="email" placeholder="Insira Seu email">
-
-				<input type="password" name="senha" value="" id="senha" placeholder="Insira sua Senha">
-				<!-- <input type="password" name="senha" id="senha" value="" placeholder="Insira sua senha"> -->
-				<a id="mostrar-senha" href="#" onclick="mostrarSenha()"><i class="fas fa-eye"></i></a>
-
-				<button type="button" class="btn-cadastro" name="button"><i class="fas fa-arrow-right"></i></button>
-				<div class="proxima-etapa">
-					 <button type="submit" class="btn-login btn-cadastro2 " name="cadastrar">Fazer cadastro</button>
-
-					 <div class="file-upload">
-	            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
-	            <div class="image-upload-wrap">
-	                <input class="file-upload-input" type='file' name="foto" onchange="readURL(this);" accept="image/*" />
-	                <div class="drag-text">
-	                    <h3>Drag and drop a file or select add Image</h3>
-	                </div>
-	            </div>
-	            <div class="file-upload-content">
-	                <img class="file-upload-image" src="#" alt="your image" />
-	                <div class="image-title-wrap">
-	                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-	                </div>
-	            </div>
-	        </div>
-
-				</div>
-
-    </form>
-	</div>
-    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-		<script type="text/javascript">
-			$('.btn-cadastro').click(function(){
-				$('.proxima-etapa').animate({
-					left: '50%'
-				}, 1000);
-			});
-		</script>
-		<script type="text/javascript">
-		function mostrarSenha() {
-				var tipo = document.getElementById('senha');
-				if (tipo.type == "password") {
-						tipo.type = "text";
-				} else {
-						tipo.type = "password";
-				}
-		}
-		</script>
-		</script>
-		<script type="text/javascript">
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                $('.image-upload-wrap').hide();
-
-                $('.file-upload-image').attr('src', e.target.result);
-                $('.file-upload-content').show();
-
-                $('.image-title').html(input.files[0].name);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-
-        } else {
-            removeUpload();
-        }
-    }
-
-    function removeUpload() {
-        $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-        $('.file-upload-content').hide();
-        $('.image-upload-wrap').show();
-    }
-    $('.image-upload-wrap').bind('dragover', function() {
-        $('.image-upload-wrap').addClass('image-dropping');
-    });
-    $('.image-upload-wrap').bind('dragleave', function() {
-        $('.image-upload-wrap').removeClass('image-dropping');
+    <div class="container">
+        <i class="fas fa-user-circle"></i>
+        <p>Cadastro</p>
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data" name="cadastro">
+            <input type="text" name="nome" placeholder="Insira seu nome">
+            <input type="email" name="email" placeholder="Insira Seu email">
+            <input type="password" class="myPass" name="senha" value="" id="senha" placeholder="Insira sua Senha">
+            <!-- mostrar password -->
+            <span id="showPass" class="showPassC">
+							<i class="far fa-eye-slash" aria-hidden="true"></i>
+					<i class="far fa-eye" aria-hidden="true" style="display:none;"></i>
+					</span>
+            <button type="button" class="btn-cadastro" name="button"><i class="fas fa-arrow-right"></i></button>
+            <div class="proxima-etapa">
+                <button type="submit" class="btn-login btn-cadastro2 " name="cadastrar">Fazer cadastro</button>
+                <div class="file-upload">
+                    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+                    <div class="image-upload-wrap">
+                        <input class="file-upload-input" type='file' name="foto" onchange="readURL(this);" accept="image/*" />
+                        <div class="drag-text">
+                            <h3>Drag and drop a file or select add Image</h3>
+                        </div>
+                    </div>
+                    <div class="file-upload-content">
+                        <img class="file-upload-image" src="#" alt="your image" />
+                        <div class="image-title-wrap">
+                            <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="js/mostrarSenha.js"></script>
+    <script src="js/uploadImage.js"></script>
+    <script type="text/javascript">
+    $('.btn-cadastro').click(function() {
+        $('.proxima-etapa').animate({
+            left: '50%'
+        }, 1000);
     });
     </script>
 </body>

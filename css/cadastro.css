@@ -1,3 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Thasadith');
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    overflow: hidden;
+}
+
+h1,
+form {
+    position: absolute;
+    z-index: 1;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    ;
+    background: url('https://i.imgur.com/Gux2Frj.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 1000;
+}
+
+.p_tecla {
+    color: #fff;
+    position: absolute;
+    font-size: 24px;
+    bottom: 10px;
+    left: 95%;
+}
+
+.time {
+    position: absolute;
+    top: 60%;
+    left: 15px;
+}
+
+.date {
+    position: absolute;
+    top: 77%;
+    left: 15px;
+}
+
+.hours,
+.colon,
+.minutes,
+.colon,
+.seconds {
+    color: #fff;
+    font-size: 90px;
+    font-weight: 100;
+    font-family: 'Thasadith', sans-serif;
+
+}
+
+.month,
+.day,
+.year {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 100;
+    font-family: 'Thasadith', sans-serif;
+}
+
+.container {
+    background: #fff;
+    width: 855px;
+    height: 430px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+}
+
+.fa-user-circle {
+    font-size: 90px;
+    position: absolute;
+    left: 50%;
+    top: 9%;
+    transform: translate(-50%, 0);
+    color: #6c5ce7;
+}
+
+.container p {
+    font-family: 'Thasadith', sans-serif;
+    color: #000;
+    opacity: .7;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 28%;
+    transform: translate(-50%, 0);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+.container form input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #dcdcdc;
+    width: 485px;
+    height: 30px;
+    margin-left: 205px;
+    margin-top: 19px;
+    position: relative;
+    top: 150px;
+    outline: none;
+}
+
+.btn-login {
+    background: #537895;
+    border: none;
+    color: #fff;
+    padding: 10px 15px 10px 15px;
+    border-radius: 2px;
+    font-size: 17px;
+    font-weight: 100;
+    outline: none;
+    position: absolute;
+    top: 300%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    transition: .2s;
+    background: #09203f;
+}
+
+.cadastro {
+    color: #6c5ce7;
+    position: absolute;
+    top: 300%;
+    left: 74%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    transition: .2s;
+}
+
+.cadastro:hover {
+    transition: .2s;
+    opacity: .7;
+}
+
+#mostrar-senha {
+    position: absolute;
+    top: 230px;
+    left: 660px;
+}
+
+.fa-eye {
+    color: #242424;
+}
+.alerta_campos{
+  color: #fff;
+  background: #ff0000;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 93%;
+  z-index: 1000;
+}
+#showPass{
+  position:absolute;
+ top:222%;
+ right:20%;
+ z-index:10;
+ border:none;
+ background:transparent;
+ outline:none;
+ cursor: pointer;
+}
 .btn-cadastro2{
   top: 90% !important;
 }
@@ -23,7 +212,7 @@
   width: 100px;
 }
 .fa-eye{
-  
+
 }
 #mostrar-senha {
   top: 275px !important;
@@ -165,4 +354,14 @@
   padding: 5px 10px 5px 10px;
   text-align: center;
   z-index: 1000;
+}
+#showPass{
+  position:absolute !important;
+ top:180% !important;
+ right:20% !important;
+ z-index:10 !important;
+ border:none !important;
+ background:transparent !important;
+ outline:none !important;
+ cursor: pointer !important;
 }
