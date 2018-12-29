@@ -79,7 +79,7 @@ if (isset($_POST['cadastrar'])) {
         	$nome_imagem = md5(uniqid(time())) . "." . $ext[1];
 
         	// Caminho de onde ficará a imagem
-        	$caminho_imagem = "fotos_localh/" . $nome_imagem;
+        	$caminho_imagem = "fotos_sql/" . $nome_imagem;
 
 			// Faz o upload da imagem para seu respectivo caminho
 			move_uploaded_file($foto["tmp_name"], $caminho_imagem);

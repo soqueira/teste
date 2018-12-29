@@ -27,7 +27,7 @@ mysqli_close($connect);
     <?php
     //pega os dados do sql
       echo "Olá ". $dados['nome'];
-      echo "<img class='img_ps' src='fotos_localh/".$dados['foto']."'>";
+      echo "<img class='img_ps' src='fotos_sql/".$dados['foto']."'>";
     ?>
     <a href="logout.php">Sair</a>
       <a href="informacoes.php">informações</a>
