@@ -79,13 +79,13 @@ if (isset($_POST['cadastrar'])) {
         	$nome_imagem = md5(uniqid(time())) . "." . $ext[1];
 
         	// Caminho de onde ficará a imagem
-        	$caminho_imagem = "fotos/" . $nome_imagem;
+        	$caminho_imagem = "fotos_localh/" . $nome_imagem;
 
 			// Faz o upload da imagem para seu respectivo caminho
 			move_uploaded_file($foto["tmp_name"], $caminho_imagem);
 
 			// Insere os dados no banco
-			$sql = mysqli_query($connect,"INSERT INTO usuarios VALUES ('', '".$nome."', '".$email."', '".$nome_imagem."', '".$senha_cript."')");
+			$sql = mysqli_query($connect,"INSERT INTO usuarios VALUES ('', '".$nome."', '".$email."', '".$nome_imagem."', '".$senha_cript."','')");
 
 			// Se os dados forem inseridos com sucesso
 			if ($sql){
@@ -131,7 +131,9 @@ endif;
 					<i class="far fa-eye" aria-hidden="true" style="display:none;"></i>
 					</span>
             <button type="button" class="btn-cadastro" name="button"><i class="fas fa-arrow-right"></i></button>
+						<a href="login.php" class="f_log">Fazer login</a>
             <div class="proxima-etapa">
+							<button type="button" name="button" class="back_div"><i class="fas fa-arrow-left"></i></button>
                 <button type="submit" class="btn-login btn-cadastro2 " name="cadastrar">Fazer cadastro</button>
                 <div class="file-upload">
                     <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
@@ -161,6 +163,11 @@ endif;
             left: '50%'
         }, 1000);
     });
+		$('.back_div').click(function(){
+			$('.proxima-etapa').animate({
+				left: '155%'
+			}, 1000);
+		});
     </script>
 </body>
 

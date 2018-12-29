@@ -229,6 +229,7 @@ input:-webkit-autofill:active {
   left: 160%;
   transform: translate(-50%, -50%);
   border-radius: 2px;
+  z-index: 11;
 }
 .file-upload {
   background-color: #ffffff;
@@ -364,4 +365,37 @@ input:-webkit-autofill:active {
  background:transparent !important;
  outline:none !important;
  cursor: pointer !important;
+}
+.f_log{
+  color: #6c5ce7;
+  position: absolute;
+  top: 375px;
+  left: 74%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  transition: .2s;
+}
+.f_log:hover{
+  transition: .2s;
+  opacity: .7;
+}
+.back_div{
+  background: #537895;
+  border: none;
+  color: #fff;
+  padding: 10px 15px 10px 15px;
+  border-radius: 2px;
+  font-size: 17px;
+  font-weight: 100;
+  outline: none;
+  position: absolute;
+  cursor: pointer;
+  width: 50px;
+  top: 85.5%;
+
+}
+.back_div:hover{
+  transition: .2s;
+  background: #09203f;
+  width: 100px;
 }
