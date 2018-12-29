@@ -100,7 +100,7 @@
     <script src="js/keyUp.js"></script>
     <script src="js/mostrarSenha.js"></script>
     <script src="js/hora.js"></script>
-    <script src="js/wow.js"></script>
+    <script src="js/wow.min.js"></script>
     <!-- loader -->
     <script>
     window.addEventListener("load", function() {
