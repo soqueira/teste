@@ -17,11 +17,11 @@ body, html{
   position: fixed;
   z-index: 1;
   left: -380px;
-  transition: 1s;
+  transition: 1s ease-out;
 }
 .menu-hide.show{
   left: 0;
-  transition: 1s;
+  transition: 1s ease-out;
 }
 .menu-hide button{
   background: transparent;
@@ -33,7 +33,7 @@ body, html{
   z-index: 2;
   left: 360px;
   top: 45%;
-  transition: 1s;
+  transition: 1s ease-out;
   font-size: 20px;
   background: cadetblue;
   padding: 16px;
@@ -43,15 +43,13 @@ body, html{
 }
 .fa-arrow-right.active{
   transform: rotate(180deg);
-  transition: 1s;
+  transition: 1s ease-out;
 }
 .img_user{
   width: 150px;
   height: 150px;
   position: absolute;
-  left: 50%;
-  top: 60px;
-  transform: translate(-50%);
+
   border-radius: 50%;
 }
 .nome_user{
@@ -92,4 +90,15 @@ body, html{
 .nav_user a:hover{
   transition: .3s;
   background: #34495e;
+}
+.img_userB{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  transform: translate(-50%);
+  border-radius: 50%;
+  background: tomato;
+  overflow: hidden;
 }

@@ -21,41 +21,16 @@ mysqli_close($connect);
 <head>
     <meta charset="utf-8">
     <title>Home</title>
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 <body>
 
-  <div class="menu-hide">
-    <button type="button"><i class="menu-tab fas fa-arrow-right"></i></a></button>
-    <?php echo "<img class='img_user' src='fotos_sql/".$dados['foto']."'>";
-     ?>
-     <div class="nome_user">
-       <?php echo "<p>".$dados['nome']."</p>"; ?>
-     </div>
-     <div class="nav_user">
-       <a href="logout.php">Sair</a>
-       <a href="#">Lorem ipsum</a>
-       <a href="#">Lorem ipsum</a>
-       <a href="informacoes.php">Editar perfil</a>
-       <a href="perfil.php">Perfil</a>
-
-     </div>
-
-  </div>
+    <?php include 'nav_lateral.php' ?>
 
 
-      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-      <script type="text/javascript">
 
-      $(document).ready(function(){
-        $('.menu-tab').click(function(){
-          $('.menu-hide').toggleClass('show');
-          $('.menu-tab').toggleClass('active');
-        });
-      });
+    <!-- scripts -->
+    <?php include 'javascriptNav.php' ?>
 
-      </script>
 </body>
 
 </html>

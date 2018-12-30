@@ -65,9 +65,10 @@ if (isset($_POST['cadastrar'])) {
 		$r = mysqli_query($connect, $q);
 
 		// exibe erro se o email já estiver cadastrado
-		if(mysqli_num_rows($r) >= 1):
+		if(mysqli_num_rows($r) >= 1){
 			echo "<p class='alerta_campos'>esse email já esta em uso</p>";
-		else:
+		}
+		else{
 
 		// Se não houver nenhum erro
 		if (count($error) == 0) {
@@ -92,7 +93,7 @@ if (isset($_POST['cadastrar'])) {
 				header('location: login.php');
 			}
 		}
-	endif;
+	}
 		// Se houver mensagens de erro, exibe-as
 		if (count($error) != 0) {
 			foreach ($error as $erro) {
@@ -101,7 +102,7 @@ if (isset($_POST['cadastrar'])) {
 		}
 	}else{
 		echo "<p class='alerta_campos'>Coloque uma foto de perfil</p>";
-	}
+	}///////////
 endif;
 }
 

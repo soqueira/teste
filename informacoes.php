@@ -19,16 +19,16 @@
 
 
   if (!$connect) {
-  die("Connection failed: " . mysqli_connect_error());
+  die("Falha na conexão: " . mysqli_connect_error());
 }
-$sql = "UPDATE usuarios SET ano_nasc='$ano_nascimento' WHERE id='$id'";
-if (mysqli_query($connect, $sql)) {
-  echo "Informações adicionadas com sucesso!";
-  header('location: informacoes.php');
-} else {
-  echo "Erro ao guardar informações: " . mysqli_error($connect);
-}
-endif;
+  $sql = "UPDATE usuarios SET ano_nasc='$ano_nascimento' WHERE id='$id'";
+  if (mysqli_query($connect, $sql)) {
+    echo "Informações adicionadas com sucesso!";
+    header('location: informacoes.php');
+  } else {
+    echo "Erro ao guardar informações: " . mysqli_error($connect);
+  }
+  endif;
 
 
 mysqli_close($connect);
@@ -41,6 +41,9 @@ mysqli_close($connect);
      <title>Informações</title>
    </head>
    <body>
+
+     <?php include 'nav_lateral.php' ?>
+
      <form class="" action="informacoes.php" method="POST">
        <input type="date" name="ano_nasc" value="" placeholder="digite o ano em que voce nasceu">
        <button type="submit" name="enviar_det">Atualizar informações</button>
@@ -67,5 +70,9 @@ mysqli_close($connect);
       $diab = $dia - $dia1 ;
       echo "você TEM: ".$anob. " ANOS, ".$mesb." MESES E ".$diab." DIAS" ;
       ?>
+
+
+
+      <?php include 'javascriptNav.php' ?>
    </body>
  </html>

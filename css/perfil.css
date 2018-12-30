@@ -1,0 +1,84 @@
+.capa_user{
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+.a{
+  height: 200%;
+}
+.containers {
+  height: 270px;
+  position: relative;
+  max-width: 320px;
+  margin: auto;
+}
+.containers .imageWrapper {
+
+  width: 70%;
+  padding-bottom: 70%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.containers .imageWrapper img {
+  height: 105%;
+  width: initial;
+  max-height: 100%;
+  max-width: initial;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.4);
+}
+
+.file-upload_1 {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.file-upload_1 {
+    position: absolute;
+    overflow: hidden;
+    right: -13px;
+    top: -14px;
+    z-index: 1;
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2em;
+    background: transparent;
+    border: none;
+    -ms-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.file-upload_1:hover {
+ background: rgba(36, 36, 36,.5);
+}
+
+.file-upload_1 input.file-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  height: 100%;
+}
+form button[type='submit']{
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+}
