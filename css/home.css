@@ -1,10 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Thasadith');
+
 body, html{
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+  background: #e2e2e2;
+  font-family: 'Open Sans', sans-serif;
+
 }
-.img_ps{
-  width: 100px;
-  height: 100px;
+.menu-hide{
+  width: 380px;
+  height: 695px;
+  background: cadetblue;
+  position: fixed;
+  z-index: 1;
+  left: -380px;
+  transition: 1s;
+}
+.menu-hide.show{
+  left: 0;
+  transition: 1s;
+}
+.menu-hide button{
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.fa-arrow-right{
+  position: absolute;
+  z-index: 2;
+  left: 360px;
+  top: 45%;
+  transition: 1s;
+  font-size: 20px;
+  background: cadetblue;
+  padding: 16px;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.fa-arrow-right.active{
+  transform: rotate(180deg);
+  transition: 1s;
+}
+.img_user{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  transform: translate(-50%);
+  border-radius: 50%;
+}
+.nome_user{
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: 210px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nome_user p{
+  font-size: 27px;
+  color: #fff;
+}
+.nav_user{
+  width: 100%;
+  height: 400px;
+  background:#2c3e50;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+}
+.nav_user a{
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  background:#2c3e50;
+  padding-bottom: 28px;
+  padding-top: 28px;
+  transition: .3s;
+}
+.nav_user a:hover{
+  transition: .3s;
+  background: #34495e;
 }

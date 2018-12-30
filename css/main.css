@@ -239,3 +239,56 @@ input:-webkit-autofill:active {
   background: #242424;
   border-radius: 50%;
 }
+.load p{
+  color: #fff;
+  position: absolute;
+  top: 75%;
+  left: 44%;
+  font-size: 30px;
+  font-family: 'Thasadith', sans-serif;
+
+}
+.dot-p{
+  animation: animateDot_p 3s linear infinite;
+}
+@keyframes animateDot_p {
+  0%{
+    opacity: 1;
+  }
+  25%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.dot-s{
+  animation: animateDot_s 3s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateDot_s {
+  0%{
+    opacity: 1;
+  }
+  25%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.dot-t{
+  animation: animateDot_t 3s linear infinite;
+  animation-delay: 2s;
+}
+@keyframes animateDot_t {
+  0%{
+    opacity: 1;
+  }
+  25%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

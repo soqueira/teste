@@ -52,6 +52,11 @@
 
 <body>
     <div class="load">
+        <p class="wow fadeInLeft" data-wow-delay="1s">Carregando
+          <span class="dot-p">.</span>
+          <span class="dot-s">.</span>
+          <span class="dot-t">.</span>
+        </p>
         <div class="loader">
             <span></span>
             <span></span>

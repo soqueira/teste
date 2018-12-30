@@ -122,7 +122,7 @@ endif;
         <i class="fas fa-user-circle"></i>
         <p>Cadastro</p>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data" name="cadastro">
-            <input type="text" name="nome" placeholder="Insira seu nome">
+            <input type="text" name="nome" placeholder="Insira seu nome" maxlength="27">
             <input type="email" name="email" placeholder="Insira Seu email">
             <input type="password" class="myPass" name="senha" value="" id="senha" placeholder="Insira sua Senha">
             <!-- mostrar password -->
