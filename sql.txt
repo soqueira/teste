@@ -1,11 +1,11 @@
--- phpMyAdmin SQL Dump
+Ôªø-- phpMyAdmin SQL Dump
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 31-Dez-2018 ‡s 18:16
--- Vers„o do servidor: 10.1.35-MariaDB
--- vers„o do PHP: 7.2.9
+-- Generation Time: 31-Dez-2018 √†s 18:39
+-- Vers√£o do servidor: 10.1.35-MariaDB
+-- vers√£o do PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,13 +39,6 @@ CREATE TABLE `usuarios` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `foto`, `senha`, `ano_nasc`, `foto_capa`) VALUES
-(82, 'vitor siqueira', 'vitorsiqueria@gmail.com', 'bcf7b51b5f51142ca65944d106e6654b.jpg', 'YWRtaW4=', '0000-00-00', 'f1658f8fd98f60d28ad96dd1df1b7ddd.jpg');
-
---
 -- Indexes for dumped tables
 --
 
@@ -64,7 +57,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
