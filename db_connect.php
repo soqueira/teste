@@ -7,8 +7,7 @@
 
   $connect = mysqli_connect($serverName, $userName, $password, $db_name);
 
-  if(mysqli_connect_error()):
+  if(mysqli_connect_error()){
     echo "falha ao conectar no banco de dados ".mysqli_connect_error();
-  endif;
-
+  }
 ?>

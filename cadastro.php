@@ -86,7 +86,7 @@ if (isset($_POST['cadastrar'])) {
 			move_uploaded_file($foto["tmp_name"], $caminho_imagem);
 
 			// Insere os dados no banco
-			$sql = mysqli_query($connect,"INSERT INTO usuarios VALUES ('', '".$nome."', '".$email."', '".$nome_imagem."', '".$senha_cript."','')");
+			$sql = mysqli_query($connect,"INSERT INTO usuarios VALUES ('', '".$nome."', '".$email."', '".$nome_imagem."', '".$senha_cript."','','')");
 
 			// Se os dados forem inseridos com sucesso
 			if ($sql){
