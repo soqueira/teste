@@ -41,8 +41,7 @@
        }
      }
      else {
-       $erro = $_SESSION['erro'];
-       echo "$erro";
+       echo "<p class='warning'>insira uma imagem</p>";
      }
    }
  }
