@@ -131,10 +131,6 @@
 
 </div>
 
-     <!-- <?php
-     // echo date('d/m/Y', strtotime($dados['ano_nasc']));
-      ?> -->
-
       <!-- scripts -->
       <?php include 'javascriptNav.php' ?>
       <script>
